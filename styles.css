@@ -1,41 +1,37 @@
 .container {
     display: flex;
-    flex-wrap: wrap;
-    width: 600px;
-    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .card {
-    width: 100px;
-    height: 150px;
-    margin: 10px;
-    border: 1px solid #000;
-    background-image: url('bomb.png'); /* URL de la imagen de la bomba */
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* Efecto 3D */
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Ocultar el reverso de la tarjeta */
+}
+
+.front {
+    background-image: url('boom.jpg'); /* Imagen frontal de la tarjeta */
     background-size: cover;
 }
 
-.card:hover {
-    background-image: url('explosion.png'); /* URL de la imagen de explosión */
-    cursor: pointer;
+.back {
+    background-image: url('explosion.png'); /* Imagen trasera de la tarjeta */
+    background-size: cover;
+    transform: rotateY(180deg); /* Girar 180 grados para mostrar el reverso */
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.5s ease; /* Transición de opacidad */
 }
 
-#card9:hover {
-    background-image: url('water.png'); /* URL de la imagen de agua o extintor */
+.card:hover .back {
+    opacity: 1; /* Al pasar el cursor, mostrar el reverso */
 }
 
-/* Para probar extras */
-
-/* Para probar opacity */
-#card3 {
-    opacity: 0.5;
-}
-
-/* Para probar display */
-#card4 {
-    display: none;
-}
-
-/* Para probar visibility */
-#card5 {
-    visibility: hidden;
-}
