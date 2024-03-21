@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    margin: 10px;
+    border: 1px solid #000;
+    background-image: url('bomb.png'); /* URL de la imagen de la bomba */
+    background-size: cover;
+}
+
+.card:hover {
+    background-image: url('explosion.png'); /* URL de la imagen de explosión */
+    cursor: pointer;
+}
+
+#card9:hover {
+    background-image: url('water.png'); /* URL de la imagen de agua o extintor */
+}
+
+/* Para probar extras */
+
+/* Para probar opacity */
+#card3 {
+    opacity: 0.5;
+}
+
+/* Para probar display */
+#card4 {
+    display: none;
+}
+
+/* Para probar visibility */
+#card5 {
+    visibility: hidden;
+}
