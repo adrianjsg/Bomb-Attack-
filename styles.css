@@ -1,37 +1,76 @@
+body {
+    background-color: #C5EBAA; /* Color de fondo de la web */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #A5DD9B; /* Color del encabezado */
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
 .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 20px;
 }
 
 .card {
-    width: 200px;
-    height: 300px;
-    perspective: 1000px; /* Efecto 3D */
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    perspective: 1000px; /* Se utiliza para aplicar perspectiva al efecto de transformación 3D */
+    cursor: pointer; /* Cambia el cursor al pasar sobre las tarjetas */
+    background-color: #F6F193; /* Color de fondo de las tarjetas */
 }
 
 .front, .back {
     width: 100%;
     height: 100%;
     position: absolute;
-    backface-visibility: hidden; /* Ocultar el reverso de la tarjeta */
+    backface-visibility: hidden; /* Oculta la cara trasera de la tarjeta durante la animación */
+    transition: transform 0.5s; /* Define la transición de transformación que se aplicará a las caras de las tarjetas */
 }
 
 .front {
-    background-image: url('boom.jpg'); /* Imagen frontal de la tarjeta */
-    background-size: cover;
+    transform: rotateY(0deg); /* Define la posición inicial de la cara delantera */
 }
 
 .back {
-    background-image: url('explosion.png'); /* Imagen trasera de la tarjeta */
-    background-size: cover;
-    transform: rotateY(180deg); /* Girar 180 grados para mostrar el reverso */
-    opacity: 0; /* Inicialmente oculto */
-    transition: opacity 0.5s ease; /* Transición de opacidad */
+    transform: rotateY(180deg); /* Define la posición inicial de la cara trasera */
+    display: flex; /* Alinea verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    background-position: center; /* Centra la imagen de fondo */
+    background-size: contain; /* Ajusta el tamaño de la imagen de fondo */
+}
+
+.card:hover .front {
+    transform: rotateY(-180deg); /* Cuando se pasa el cursor sobre la tarjeta, la cara delantera rota -180 grados */
 }
 
 .card:hover .back {
-    opacity: 1; /* Al pasar el cursor, mostrar el reverso */
+    transform: rotateY(0deg); /* Cuando se pasa el cursor sobre la tarjeta, la cara trasera rota 0 grados */
 }
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+footer {
+    background-color: #F2C18D; /* Color del pie de página */
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 
