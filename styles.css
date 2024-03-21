@@ -8,7 +8,7 @@ header {
     background-color: #A5DD9B; /* Color del encabezado */
     padding: 20px;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .container {
@@ -67,10 +67,12 @@ footer {
     background-color: #F2C18D; /* Color del pie de página */
     padding: 20px;
     text-align: center;
-    color: white;
+    color: black;
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-size: 20px;
+    font-weight: bold; 
 }
 
 
